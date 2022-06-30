@@ -1,0 +1,7 @@
+defaults:
+  - db: cpu-server
+  - _self_
+
+
+model_path : item_recommend/bin/item_recommend
+output_dir: /Users/joohyunyoon/dev/git/abc_food_api_server/item_recommend/bin

@@ -1,0 +1,2 @@
+[2022-06-28 10:29:48,380][db][INFO] - get_engine mysql+pymysql://abcfood:illunex123!@172.30.1.44:3307/abc_food
+[2022-06-28 10:29:48,380][db][INFO] - get_engine_with_url mysql+pymysql://abcfood:illunex123!@172.30.1.44:3307/abc_food

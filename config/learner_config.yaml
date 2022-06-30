@@ -1,0 +1,7 @@
+defaults:
+  - db: cpu-server
+  - _self_
+
+learn_product_list: ALL
+model_path : demand_forecast/bin/ai_demand_forecast
+

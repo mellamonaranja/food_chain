@@ -1,0 +1,6 @@
+driver: mysql+pymysql
+user_name: abcfood
+user_password: illunex123!
+db_host: localhost
+db_port: 3307
+db_name: abc_food

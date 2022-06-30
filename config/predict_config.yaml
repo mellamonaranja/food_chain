@@ -1,0 +1,6 @@
+defaults:
+  - db: cpu-server
+  - _self_
+
+predict_product_id: 1000232
+model_path : demand_forecast/bin/ai_demand_forecast
