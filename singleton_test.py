@@ -1,44 +1,62 @@
-class Counter():
-    def __init__(self, value=0): #instance 1, self is variable
-        self.value=value 
-    def increment(self, delta=1): #instance 2
-        self.value+=delta
-    def decrement(self, delta=1): #instance 3
-        self.value-=delta
+# from abc import ABCMeta, abstractclassmethod 
+
+# class IPerson(metaclass=ABCMeta):
+#     @abstractclassmethod
+#     def print_data():
+#         """implement in child class
+#         """
+
+# class PersonSingleton(IPerson):
+#     __instance=None 
+
+#     @staticmethod
+#     def get_instance():
+#         if PersonSingleton.__instance==None:
+#             PersonSingleton('Default name', 0)
+#         return PersonSingleton.__instance 
+ 
+
+#     def __init__(self, name, age): #this constructor cannot be used multiple times then we would always override the instance
+#         if PersonSingleton.__instance!=None:
+#             raise Exception('Signgleton cannot be instantiated more than once')
+#         else:
+#             self.name=name
+#             self.age=age
+#             PersonSingleton.__instance=self #it gets assigned above as '__instance=None'
+    
+#     @staticmethod        
+#     def print_data():
+#         print(f"Name:{PersonSingleton.__instance.name}, Age:{PersonSingleton.__instance.age}")
         
-# instance method must create instance first
-# and then call that instance
-# auto allocates first variable
+# p=PersonSingleton('joohyun',30)
+# print(p)
+# p.print_data()
 
-class User:
-    def __init__(self, email, password):
-        self.email=email
-        self.password=password
+# # p2=PersonSingleton('joo',31)
+# # print(p2)
+# # p2.print_data()
+
+# p3=PersonSingleton.get_instance()
+# print(p3)
+# p3.print_data()
+
+class Point():
+    def __new__(cls, *args, **kwargs):
+        print('__new__')
+        print(cls)
+        print(args)
+        print(kwargs)
+        obj=super().__new__(cls)
+        return obj
+    def __init__(self, x=0, y=0):
+        print('__init__')
+        self.x=x
+        self.y=y
         
-    @classmethod #declare the method to class, this is class method
-    def fromTuple(cls, tup): #class is variable, it called as cls
-        return cls(tup[0], tup[1])
-    
-    @classmethod
-    def fromDictionary(cls, dic):
-        return cls(dic['email'], dic['password'])
-    
-# user=User('google@google.com','1234')
-# print(user.email, user.password)
+p=Point(3,4)
+print(p)
 
-# user=User.fromTuple(('google@google.com','1234'))
-# print(user.email, user.password)
-
-class StringUtils: #there is no init variable
-    @staticmethod
-    def toCamelcase(text):
-        words=iter(text.split("_"))
-        return next(words)+"".join(i.title() for i in words)
-    
-    @staticmethod
-    def toSnakecase(text):
-        letters=["_"+i.lower() if i.isupper() else i for i in text]
-        return "".join(letters).lstrip("_")
-    
-print(StringUtils.toCamelcase('last_modified_date'))
-print(StringUtils.toSnakecase('last_modified_date'))
+class RectPoint(Point):
+    MAX_Inst=4
+    Inst_created=0
+    def __new__(cls, *args, **kwargs):
