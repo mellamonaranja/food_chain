@@ -39,19 +39,15 @@ async def check_customer(customer_id:int):
     try:
         file_exists=os.path.exists(customer_id+'_model\.bin')
         if file_exists==True : 
-            return 
+            return #item_rec value
         else:
             print('Input the correct customer ID') 
+            # status code message
     except ValueError:
         return {
             STATUS_CODE: API_FAIL_INVALID_CUSTOMER,
             MESSAGE : "Invalid customer id %d" %(customer_id)
         }
-
-init
-
-
-
 
 @app.get("/item_rec/{customer_id}/{product_id}",tags=['recommend'])
 async def check_product(customer_id:int, product_id:int):

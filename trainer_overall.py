@@ -10,6 +10,7 @@ from mlxtend.preprocessing import TransactionEncoder
 from mlxtend.frequent_patterns import association_rules, apriori, fpgrowth
 
 
+
 @hydra.main(config_path="config", config_name="learner_all_config")
 def main(cfg: DictConfig) -> None:
 
