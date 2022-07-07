@@ -17,6 +17,7 @@ import sys
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from demand_forecast.db import get_engine
 
+
 @hydra.main(config_path="config", config_name="learner_all_config")
 def main(cfg: DictConfig) -> None:
 

@@ -1,7 +1,7 @@
 import sqlalchemy
 from sqlalchemy import create_engine
 from typing import Optional
-from demand_forecast.utils import get_logger
+from utils import get_logger
 logger = get_logger("db")
 
 

@@ -1,0 +1,9 @@
+db:
+  driver: mysql+pymysql
+  user_name: abcfood
+  user_password: illunex123!
+  db_host: 172.30.1.44
+  db_port: 3307
+  db_name: abc_food
+model_path: item_recommend/bin/item_recommend
+output_dir: /Users/joohyunyoon/dev/git/abc_food_api_server/item_recommend/bin

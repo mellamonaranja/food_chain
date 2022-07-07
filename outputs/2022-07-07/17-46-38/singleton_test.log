@@ -1,0 +1,3 @@
+[2022-07-07 17:46:38,319][learner_proxy][INFO] - {'driver': 'mysql+pymysql', 'user_name': 'abcfood', 'user_password': 'illunex123!', 'db_host': '172.30.1.44', 'db_port': 3307, 'db_name': 'abc_food'}
+[2022-07-07 17:46:38,319][db][INFO] - get_engine mysql+pymysql://abcfood:illunex123!@172.30.1.44:3307/abc_food
+[2022-07-07 17:46:38,320][db][INFO] - get_engine_with_url mysql+pymysql://abcfood:illunex123!@172.30.1.44:3307/abc_food
